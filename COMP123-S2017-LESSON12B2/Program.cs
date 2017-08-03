@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/* Name: Sylvere Ekponon
+ * Date: August 3, 2017
+ * Description: Calculator Demo Project
+ * Version: 0.1 - Created the Project
+ */
 namespace COMP123_S2017_LESSON12B2
 {
     static class Program
@@ -16,7 +20,7 @@ namespace COMP123_S2017_LESSON12B2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new CalculatorForm());
         }
     }
 }

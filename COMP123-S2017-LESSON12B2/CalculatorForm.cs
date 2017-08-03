@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/* Name: Sylvere Ekponon
+ * Date: August 3, 2017
+ * Description: Calculator Demo Project
+ * Version: 0.1 - Created the Project
+ */
+
 namespace COMP123_S2017_LESSON12B2
 {
-    public partial class Form1 : Form
+    public partial class CalculatorForm : Form
     {
-        public Form1()
+        public CalculatorForm()
         {
             InitializeComponent();
         }
