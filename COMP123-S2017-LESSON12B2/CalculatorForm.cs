@@ -12,7 +12,7 @@ using System.Windows.Forms;
 /* Name: Sylvere Ekponon
  * Date: August 3, 2017
  * Description: Calculator Demo Project
- * Version: 1.2 - Refactored CalculateButton_Click to account for second operand 
+ * Version: 1.3 - Fixed bug in CalculatorButton_Click 
  */
 
 namespace COMP123_S2017_LESSON12B2
@@ -27,6 +27,8 @@ namespace COMP123_S2017_LESSON12B2
         private List<double> _operandList;
 
         private double _result;
+
+        private bool _isOperandTwo;
 
         //PUBLIC PROPERTIES
         public bool IsDecimalClicked
@@ -75,6 +77,18 @@ namespace COMP123_S2017_LESSON12B2
             set
             {
                 this._result = value;
+            }
+        }
+
+        public bool IsOperandTwo
+        {
+            get
+            {
+                return this._isOperandTwo;
+            }
+            set
+            {
+                this._isOperandTwo = value;
             }
         }
 
@@ -132,9 +146,10 @@ namespace COMP123_S2017_LESSON12B2
 
             else
             {
-                if (OperandList.Count > 0)
+                if ((OperandList.Count > 0)&&(this.IsOperandTwo==false))
                 {
                     ResultTextBox.Text = calculatorButton.Text;
+                    this.IsOperandTwo = true;
                 }
                 else
                 {
@@ -212,6 +227,9 @@ namespace COMP123_S2017_LESSON12B2
                         this.Result = this.OperandList[0] - this.OperandList[1];
                         break;
                 }
+                this.OperandList.Clear();
+                this.OperandList.Add(this.Result);
+                this.IsOperandTwo = false;
             }
             this.CurrentOperator = operatorString;
         }
@@ -247,6 +265,8 @@ namespace COMP123_S2017_LESSON12B2
             ResultTextBox.Text = "0";
             this.CurrentOperator = "C";
             this.OperandList = new List<double>();
+            this.IsOperandTwo = false;
+            this.Result = 0;
 
 
         }
