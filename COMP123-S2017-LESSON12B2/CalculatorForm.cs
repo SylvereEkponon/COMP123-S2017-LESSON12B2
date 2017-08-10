@@ -12,7 +12,7 @@ using System.Windows.Forms;
 /* Name: Sylvere Ekponon
  * Date: August 3, 2017
  * Description: Calculator Demo Project
- * Version: 1.1 - Added the _showResult method 
+ * Version: 1.2 - Refactored CalculateButton_Click to account for second operand 
  */
 
 namespace COMP123_S2017_LESSON12B2
@@ -209,7 +209,7 @@ namespace COMP123_S2017_LESSON12B2
                         break;
 
                     case "-":
-                        this.Result = this.OperandList[0] + this.OperandList[1];
+                        this.Result = this.OperandList[0] - this.OperandList[1];
                         break;
                 }
             }
@@ -225,7 +225,7 @@ namespace COMP123_S2017_LESSON12B2
         {
             try
             {
-                return Convert.ToDouble(operandString)
+                return Convert.ToDouble(operandString);
             }
             catch (Exception exception)
             {
