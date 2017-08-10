@@ -10,17 +10,24 @@ using System.Windows.Forms;
  */
 namespace COMP123_S2017_LESSON12B2
 {
-    static class Program
+    public static class Program
     {
+        //Create Reference to Forms
+        public static CalculatorForm calculatorForm;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CalculatorForm());
+
+            // Instantiate a new object of type CalculatorForm
+            calculatorForm = new CalculatorForm();
+
+            Application.Run(new SplashForm());
         }
     }
 }
