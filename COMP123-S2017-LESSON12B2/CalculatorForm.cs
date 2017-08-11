@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Student ID: 300936445
  * Date: August 3, 2017
  * Description: Calculator Demo Project
- * Version: 1.4 - Added the multiplication operator
+ * Version: 1.5 - Added the Division operator
  */
 
 namespace COMP123_S2017_LESSON12B2
@@ -230,6 +230,19 @@ namespace COMP123_S2017_LESSON12B2
 
                     case "x":
                         this.Result = this.OperandList[0] * this.OperandList[1];
+                        break;
+
+                    case "÷":
+                        if (this.OperandList[1]!=0)
+                        {
+                            this.Result = this.OperandList[0] / this.OperandList[1];
+                        }
+                        else
+                        {
+
+                            ResultTextBox.Text = "Cannot by divide by zero";
+                        }
+                        
                         break;
                 }
                 this.OperandList.Clear();
