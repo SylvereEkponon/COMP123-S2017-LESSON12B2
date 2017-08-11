@@ -13,7 +13,7 @@ using System.Windows.Forms;
  * Student ID: 300936445
  * Date: August 3, 2017
  * Description: Calculator Demo Project
- * Version: 1.5 - Added the Division operator
+ * Version: 1.6 - Added the backspace operator
  */
 
 namespace COMP123_S2017_LESSON12B2
@@ -184,6 +184,7 @@ namespace COMP123_S2017_LESSON12B2
                     break;
 
                 case "◄":
+                    this._correction();
                     break;
 
                 case "±":
@@ -192,6 +193,17 @@ namespace COMP123_S2017_LESSON12B2
                 default:
                     this._calculate(operand, operatorButton.Text);
                     break;
+            }
+
+        }
+        /// <summary>
+        /// This is the _correction (backspace) method
+        /// </summary>
+        private void _correction()
+        { int length = ResultTextBox.TextLength;
+            if (length>0)
+            {
+                ResultTextBox.Text = ResultTextBox.Text.Remove(length - 1, 1);
             }
 
         }
@@ -240,7 +252,7 @@ namespace COMP123_S2017_LESSON12B2
                         else
                         {
 
-                            ResultTextBox.Text = "Cannot by divide by zero";
+                          this.ResultTextBox.Text = "Cannot by divide by zero";
                         }
                         
                         break;
