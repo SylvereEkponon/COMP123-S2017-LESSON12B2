@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /* Name: Sylvere Ekponon
+ * Student ID: 300936445
  * Date: August 3, 2017
  * Description: Calculator Demo Project
- * Version: 1.3 - Fixed bug in CalculatorButton_Click 
+ * Version: 1.4 - Added the multiplication operator
  */
 
 namespace COMP123_S2017_LESSON12B2
@@ -225,6 +226,10 @@ namespace COMP123_S2017_LESSON12B2
 
                     case "-":
                         this.Result = this.OperandList[0] - this.OperandList[1];
+                        break;
+
+                    case "x":
+                        this.Result = this.OperandList[0] * this.OperandList[1];
                         break;
                 }
                 this.OperandList.Clear();
